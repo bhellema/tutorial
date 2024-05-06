@@ -1,4 +1,9 @@
-export default function decorate(block) {
+import { fetchPlaceholders } from '../../scripts/aem.js';
+
+export default async function decorate(block) {
+  const placeholders = await fetchPlaceholders('en');
+  const { bookAHunt } = placeholders;
+
   const cols = [...block.firstElementChild.children];
   block.classList.add(`turkey-${cols.length}-cols`);
 
@@ -15,4 +20,9 @@ export default function decorate(block) {
       }
     });
   });
+  const a = document.createElement('a');
+  const linkText = document.createTextNode(bookAHunt);
+  a.appendChild(linkText);
+  a.href = 'https://www.nwtf.org/';
+  block.append(a);
 }

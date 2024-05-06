@@ -1,5 +1,19 @@
-.turkey.tom {
-  background: lightblue;
+.turkey img {
+  width: 50%;
+}
+
+.hero {
+  color: #846161;
+  font-size: 80px;
+
+  img {
+    object-position: top;
+  }
+}
+
+.turkey,
+.turkey-container {
+  font-size: var(--body-font-size-s);
 }
 
 .turkey > div {
@@ -7,8 +21,18 @@
   flex-direction: column;
 }
 
-.turkey img {
-  width: 100%;
+.external-link {
+  a {
+    display: inline-block;
+    padding: 0 12px;
+    color: white;
+    background-color: #ff6319;
+    text-decoration: none;
+    border: 1px solid #ff6319;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
 }
 
 .turkey > div > div {
@@ -19,9 +43,10 @@
   order: 0;
 }
 
-.turkey > div > .turkey-img-col img {
-  display: block;
-  width: 50%;
+@media (width <= 900px) {
+  .hero {
+    font-size: 60px;
+  }
 }
 
 @media (width >= 900px) {
